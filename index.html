@@ -27,15 +27,15 @@
     <form id="form" class="w-50 m-auto bg-light rounded p-5 mt-5 form-control">
         <div class="field mb-3">
             <label for="mortgage_amount" class="form-label">Mortgage amount (£)</label>
-            <input type="number" class="form-control" id="mortgage_amount" required>
+            <input type="number" class="form-control" id="mortgage_amount" step=".01" required>
         </div>
         <div class="field mb-3">
             <label for="mortgage_term" class="form-label">Mortgage term (years)</label>
-            <input type="number" class="form-control" id="mortgage_term" name="mortgage_term" required>
+            <input type="number" class="form-control" id="mortgage_term" name="mortgage_term" step=".01" required>
         </div>
         <div class=" field mb-3">
             <label for="interest_rate" class="form-label">Interest Rate (%)</label>
-            <input type="number" class="form-control" id="interest_rate" name="interest-rate" required>
+            <input type="number" class="form-control" id="interest_rate" name="interest-rate" step=".01" required>
         </div>
         <button type="submit" id="button" class="btn btn-primary">Calculate monthly mortgage payment</button>
         <h4 class="py-3">Monthly Payment:</h4>
