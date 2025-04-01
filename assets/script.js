@@ -7,6 +7,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
     
     mortgageForm.addEventListener('submit', function (e) {
         e.preventDefault();
-        console.log(`The Mortgage amount is: £${mortgageAmount.value}\nThe Mortgage term is: ${mortgageTerm.value} years\nThe Interest rate is: ${interestRate.value}%`);
+        let principle = parseFloat(mortgageAmount.value);
+        let numberOfPayments = parseFloat(mortgageTerm.value * 12);
+        let monthlyInterestRate = parseFloat((interestRate.value / 12) /100);
+        let monthlyMortgagePaymentValue = principle * (monthlyInterestRate * (1 + monthlyInterestRate) ** numberOfPayments) / ((1 + monthlyInterestRate) ** numberOfPayments - 1);
+        monthlyMortgagePayment.textContent = `£${monthlyMortgagePaymentValue.toFixed(2)}`;
     });
 });
